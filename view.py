@@ -49,7 +49,7 @@ class VDFKmeansUI:
         return HoverTool(tooltips = tooltip)
 
     def create_figure(self, datasource, tools, width, height, markersize, colormap):
-        fig = bokeh.plotting.figure(title = "2D Magnetosphere",
+        fig = bokeh.plotting.figure(title = "Vlasiator VDF k-means: 2-D magnetosphere",
                                     width = width,
                                     height = height,
                                     tools = tools)
@@ -61,6 +61,9 @@ class VDFKmeansUI:
                    size = markersize,
                    fill_color = colormap,
                    line_width = 0)
+
+        fig.xaxis.axis_label = 'x [m]'
+        fig.yaxis.axis_label = 'y [m]'
 
         fig.toolbar.logo = None
         fig.toolbar_location = None
